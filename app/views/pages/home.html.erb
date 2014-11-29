@@ -1,4 +1,13 @@
 <div class="jumbotron center">
 	<h1>Configurator 2.0</h1>
-	<p>Start <%= link_to "designing!", "#", class: "btn btn-primary" %></p>
+	<% if user_signed_in? %>
+		# do something
+	<% else %>
+	<p>
+		<%= link_to " Start designing!", new_user_session_path,class: "btn btn-primary" %>
+		<%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
+		</p>
+	<% end %>
+
+
 </div>
